@@ -3,16 +3,10 @@
 
 
 ## Tech stack
-Java
-framework: Spring Boot
-db: MySQL
-cache: Redis
-orm:Hibernate
-message queue:rocket mq
-Spring Cloud
-JavaScript
-ElasticSearch
-AWS
+
+java+springboot+mysql+redis+mybatisplus+rocket mq+spring cloud+es+aws/阿里云
+
+
 
 ### 一、架构设计
 
