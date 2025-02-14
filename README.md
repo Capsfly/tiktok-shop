@@ -9,10 +9,14 @@ db: MySQL
 cache: Redis
 orm:Hibernate
 message queue:rocket mq
-Spring Cloud
+
+Email: spring email
+
 JavaScript
 ElasticSearch
 AWS
+
+
 
 ### 一、架构设计
 
