@@ -6,12 +6,11 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalTime;
-import java.util.Map;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChargeReq {
+public class ChargeReqDTO {
     private BigDecimal amount;         // 交易金额
     private String currency;           // 货币类型（CNY, USD等）
     private String orderId;            // 订单 ID

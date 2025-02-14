@@ -22,7 +22,7 @@ public class CreditPayResp {
         resp.transactionId = transactionId;
         resp.orderId = orderId;
         resp.amount = amount;
-        resp.paymentStatus = PaymentStatus.SUCCESS.getCode();
+        resp.paymentStatus = "SUCCESS";
         resp.timestamp = LocalDateTime.now();
         return resp;
     }
@@ -31,7 +31,7 @@ public class CreditPayResp {
         CreditPayResp resp = new CreditPayResp();
         resp.orderId = orderId;
         resp.amount = amount;
-        resp.paymentStatus = PaymentStatus.FAILED.getCode();
+        resp.paymentStatus = "FAIL";
         resp.errorCode = errorCode;
         resp.errorMessage = errorMessage;
         resp.timestamp = LocalDateTime.now();
