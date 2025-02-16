@@ -11,10 +11,7 @@ import org.group.mall.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
@@ -31,12 +28,17 @@ public class PaymentController {
         this.chargeRespMapper = chargeRespMapper;
     }
 
-    @PostMapping("/charge")
+    @GetMapping("/charge")
     public ResponseEntity<ChargeRespDTO> charge(@RequestBody ChargeReqDTO req){
-        log.info("收到付款请求:{}",req);
+        log.info("收到请求:{}",req);
         ChargeReq chargeReq= chargeReqMapper.toEntity(req);
         ChargeResp chargeresp=paymentService.charge(chargeReq);
         ChargeRespDTO chargeRespDTO=chargeRespMapper.toDTO(chargeresp);
         return new ResponseEntity<>(chargeRespDTO,HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<String> helloWorld(){
+        return new ResponseEntity<>("hello world",HttpStatus.OK);
     }
 }
